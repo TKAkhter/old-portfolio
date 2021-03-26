@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/8.2.6/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="title">
+    <i class="fas fa-briefcase"></i>
+    <h1>Portfolio</h1>
+  </div>
+  <div id="message">
+    <h2>Welcome!</h2>
+    <div class="buttons">
+      <a class="button-links main project project-1" target="_blank" href="https://thememaker.prostylertheme.com/">
+        <div>
+          <h3>ThemeMaker by ProStyler</h3>
+        </div>
+      </a>
+      <a class="button-links main project project-2" target="_blank" href="https://trueworklogistics.com/">
+        <div>
+          <h3>True Work Logistics</h3>
+        </div>
+      </a>
+      <a class="button-links main project project-3" target="_blank" href="https://www.bykea.com/">
+        <div>
+          <h3>Bykea</h3>
+        </div>
+      </a>
+      <a class="button-links main project project-4" target="_blank" href="https://www.khelokricket.com.pk/">
+        <div>
+          <h3>kheloKricket</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <p id="load">Firebase SDK Loading&hellip;</p>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadEl = document.querySelector('#load');
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.firestore().doc('/foo/bar').get().then(() => { });
+      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      // firebase.analytics(); // call to activate
+      // firebase.analytics().logEvent('tutorial_completed');
+      // firebase.performance(); // call to activate
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = [
+          'auth',
+          'database',
+          'firestore',
+          'functions',
+          'messaging',
+          'storage',
+          'analytics',
+          'remoteConfig',
+          'performance',
+        ].filter(feature => typeof app[feature] === 'function');
+        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        loadEl.textContent = 'Powered by Firebase SDK';
+      }
+    });
+  </script>
+</body>
+
+</html>
